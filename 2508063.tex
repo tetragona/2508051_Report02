@@ -1,4 +1,12 @@
-\documentclass{article}
+\documentclass[
+  report,
+  a4paper,
+  12pt,
+  left=25mm,
+  right=10mm,
+  top=15mm,
+  bottom=15mm
+]{jlreq}
 \usepackage{array}
 \usepackage{multirow}
 \usepackage{graphicx} % \resizebox用
@@ -12,8 +20,34 @@
 
 \begin{document}
 
+\chapter{序章}
+\chapter{背景}
+本研究に至る経過を簡単に記す
+\chapter{目的}
+実験・シミュレーションの目的を簡潔に記す
+\chapter{実験方法/解析方法}
+実験・シミュレーションの内容を簡潔に記す
+箇条書きもOK
+\chapter{結果}
+実験・シミュレーションの結果を簡潔に記す
+箇条書きもOK
+\chapter{考察 }
+実験・シミュレーションの考察を簡潔に記す
+箇条書きもOK
+\chapter{結論}
+結論を記す
+目的と結論が一対になっているかを確認する
+箇条書きもOK
+\chapter{今後の進め方}
+　　　今後の進め方を記す
+　　　箇条書きもOK
+\chapter{参考報告書・文献}
+　　　関係する報告書・文献を記す
+
+
+
 \setlength{\tabcolsep}{0pt} % セル内余白を0に
-\renewcommand{\arraystretch}{1} % 行の高さ調整用
+\renewcommand{\arraystretch}{1.4} % 行の高さ調整用
 \newcommand{\cellsize}{10mm}
 
 \begin{center}
