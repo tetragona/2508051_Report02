@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx} % \resizebox用
+
+% 線幅1pt指定用
+\makeatletter
+\def\hlinewd#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
+   \reserved@a\@xhline}
+\makeatother
+
+\begin{document}
+
+\setlength{\tabcolsep}{0pt} % セル内余白を0に
+\renewcommand{\arraystretch}{1} % 行の高さ調整用
+\newcommand{\cellsize}{10mm}
+
+\begin{center}
+\begin{tabular}{|>{\centering\arraybackslash}m{\cellsize}|>{\centering\arraybackslash}m{\cellsize}|>{\centering\arraybackslash}m{\cellsize}|}
+\hlinewd{1pt}
+ 1 & 2 & 3 \\ \hlinewd{1pt}
+ 4 & 5 & 6 \\ \hlinewd{1pt}
+ 7 & 8 & 9 \\ \hlinewd{1pt}
+\end{tabular}
+\end{center}
+
+\end{document}

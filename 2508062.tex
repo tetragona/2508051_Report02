@@ -1,0 +1,59 @@
+\documentclass[uplatex,a4paper,11pt]{jsreport}
+
+\usepackage{array}
+\usepackage{geometry}
+\geometry{left=25mm,right=10mm,top=15mm,bottom=15mm}
+\usepackage{cellspace} % 追加: cellspace パッケージを読み込む
+\newcolumntype{S}[1]{>{\cellspace}#1} % S列型を定義
+
+\setlength{\arrayrulewidth}{1pt}
+
+% ↓↓↓ 追加: セルの上下の余白を設定します ↓↓↓
+% これにより、セルの内容の高さとこれらの余白の合計がセルの高さになります。
+% 目標が10mmの高さで、文字の高さが約4mmとすると、残りの6mmを上下に均等に割り振るため、
+% 各3mmずつ追加します。
+\cellspacetoplimit=3mm   % セルの上側の余白
+\cellspacebottomlimit=3mm % セルの下側の余白
+% ↑↑↑ ここまで追加 ↑↑↑
+
+\begin{document}
+
+\section*{魔法陣のような表組}
+
+ご指定のフォーマット（線幅1pt、セル幅10mm、3x3の格子）で、1から9までの整数を配置した表です。
+
+\begin{center}
+\setlength{\arrayrulewidth}{1pt}
+\begin{tabular}{|S{>{\centering\arraybackslash}p{10mm}}|S{>{\centering\arraybackslash}p{10mm}}|S{>{\centering\arraybackslash}p{10mm}}|}
+\hline
+8 & 1 & 6 \\
+\hline
+3 & 5 & 7 \\
+\hline
+4 & 9 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+各セルの内容は、デフォルトでは左寄せになりますが、`>{\centering\arraybackslash}` を列定義に含めることで中央に配置しています。
+`p{10mm}` は、「その列のセルに入るテキストの幅が10mm」という意味です。
+`\cellspacetoplimit` と `\cellspacebottomlimit` の設定により、セルの上下に余白が追加され、セルの縦寸法が調整されます。
+
+\section*{別の例}
+セル内に文字や他の記号を入れる場合も同様です。
+
+\begin{center}
+\begin{tabular}{|S{>{\centering\arraybackslash}p{10mm}}|S{>{\centering\arraybackslash}p{10mm}}|S{>{\centering\arraybackslash}p{10mm}}|}
+\hline
+A & ! & C \\
+\hline
+\$ & E & 6 \\
+\hline
+G & 8 & I \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

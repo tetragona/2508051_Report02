@@ -1,0 +1,28 @@
+\documentclass[uplatex,a4paper,11pt]{jsreport} % まずは jsarticle で成功確認後、jsreport に戻してみる
+% ↑ jsreport にするか jsarticle にするかは、最終的に必要なドキュメントクラスに合わせてください
+%   jsarticle で成功すれば、jsreport も大丈夫なはずですが、念のため一旦 jsarticle のままで試すのもアリです。
+
+\usepackage{array}
+\usepackage{geometry} % geometry パッケージも追加
+\geometry{left=25mm,right=10mm,top=15mm,bottom=15mm} % geometry の設定も追加
+
+\setlength{\arrayrulewidth}{1pt}
+
+\begin{document}
+
+\section*{魔法陣のような表組} % セクション名も追加
+
+ご指定のフォーマット（線幅1pt、セル幅10mm、3x3の格子）で、1から9までの整数を配置した表です。
+
+\begin{center} % 表をページの中央に配置
+\begin{tabular}{|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{10mm}|} % | で縦線、p{10mm} で幅10mmのパラグラフボックス
+\hline % 横線
+8 & 1 & 6 \\ \hline
+5 & 7 & 3 \\ \hline
+4 & 9 & 2 \\ \hline
+\end{tabular}
+\end{center}
+
+% 以下、他の内容も必要に応じて追加してください。ただし、まずは上記の表がきちんと出力されることを確認するのが先決です。
+
+\end{document}
